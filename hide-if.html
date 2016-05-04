@@ -14,14 +14,17 @@
 <script>
   Polymer({
     is: "hide-if",
- -  properties: {
-      if: {type: Boolean, value: false},
+    properties: {
+      value: {type: String, value: "" },
       notIf: {
-        value: true, computed: "getNotIf(if)" 
+        computed: "getNotIf(value)" 
       }
     },
-    getNotIf: function(if) {
-      return !if
+    getNotIf: function(not) {
+      if (not === "false" || not === "" || not === "0" ) {
+        not = false
+      }
+      return !not
     }
   })
 </script>
