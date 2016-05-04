@@ -15,6 +15,7 @@
   Polymer({
     is: "hide-if",
  -  properties: {
+      if: {type: Boolean, value: false},
       notIf: {
         value: true, computed: "getNotIf(if)" 
       }
